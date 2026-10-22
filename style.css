@@ -1,92 +1,143 @@
-/* Сброс отступов и полей у всех элементов */
+/* Сброс стилей */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Базовые стили для всей страницы */
 body {
-    font-family: Georgia, 'Times New Roman', serif; /* Шрифт с засечками лучше подходит для чтения */
-    line-height: 1.8; /* Межстрочный интервал для удобства чтения */
-    color: #333; /* Основной цвет текста */
-    background-color: #f9f9f9; /* Светлый фон страницы */
-    max-width: 800px; /* Ограничение ширины контента */
-    margin: 0 auto; /* Центрирование по горизонтали */
-    padding: 20px; /* Внутренние отступы */
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f4f4f4; /* Светло-серый фон */
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Стили шапки сайта */
-header {
-    text-align: center; /* Выравнивание по центру */
-    padding: 40px 0; /* Отступы сверху и снизу */
-    border-bottom: 2px solid #eee; /* Разделительная линия снизу */
-    margin-bottom: 40px; /* Отступ до основного содержимого */
+/* --- Шапка сайта (Hero Header) --- */
+.hero-header {
+    /* Замените URL на свою картинку (можно загрузить ее в репозиторий и указать имя файла, например url('header-bg.jpg') ) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 40vh; /* Высота шапки — 40% от высоты экрана */
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
 }
 
-/* Заголовок первого уровня в шапке */
-header h1 {
-    font-size: 2.5em; /* Крупный размер шрифта */
-    color: #2c3e50; /* Тёмно-синий цвет */
-    margin-bottom: 10px; /* Отступ до подзаголовка */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
-/* Подзаголовок с именем автора */
-.subtitle {
-    color: #7f8c8d; /* Серый цвет */
-    font-style: italic; /* Курсив */
+.hero-content p {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-/* Отступы между разделами */
-section {
-    margin-bottom: 40px;
+/* --- Основной контейнер --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* Заголовки второго уровня */
-h2 {
+.section-title {
+    font-size: 2rem;
     color: #2c3e50;
-    border-bottom: 1px solid #ddd; /* Тонкая линия под заголовком */
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
-    margin-bottom: 20px;
 }
 
-/* Список сказок: убираем стандартные маркеры */
-.stories ul {
-    list-style: none;
+/* --- Сетка книг (Grid) --- */
+.book-grid {
+    display: grid;
+    /* Автоматически подстраивает количество колонок: минимум 250px, максимум - заполнить пространство */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-/* Карточка каждой сказки */
-.stories li {
-    background: #fff; /* Белый фон карточки */
-    padding: 20px; /* Внутренние отступы */
-    margin-bottom: 20px; /* Отступ между карточками */
-    border-radius: 8px; /* Скругление углов */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Лёгкая тень */
+/* --- Карточка книги --- */
+.book-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Заголовок третьего уровня внутри карточки */
-.stories h3 {
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.book-cover {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Картинка заполняет блок без искажений */
+    border-bottom: 1px solid #eee;
+}
+
+.book-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.book-info h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
     margin-bottom: 10px;
 }
 
-/* Ссылки на сказки */
-.stories a {
-    text-decoration: none; /* Убираем подчёркивание */
-    color: #3498db; /* Синий цвет ссылки */
+.book-info p {
+    font-size: 0.95rem;
+    color: #666;
 }
 
-/* Ссылки при наведении курсора */
-.stories a:hover {
-    color: #2980b9; /* Более тёмный синий */
-    text-decoration: underline; /* Появляется подчёркивание */
-}
-
-/* Стили подвала сайта */
+/* --- Подвал --- */
 footer {
     text-align: center;
-    padding: 40px 0;
-    color: #95a5a6; /* Светло-серый цвет текста */
-    font-size: 0.9em; /* Чуть меньший размер шрифта */
-    border-top: 1px solid #eee; /* Разделительная линия сверху */
+    padding: 30px;
+    background-color: #2c3e50;
+    color: #bdc3c7;
     margin-top: 40px;
+}
+
+/* --- Мобильная адаптация --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-header {
+        height: 30vh;
+        min-height: 200px;
+    }
+    .book-grid {
+        /* На узких экранах карточки будут в 2 колонки или в 1, в зависимости от ширины */
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+    .book-cover {
+        height: 240px;
+    }
+    .book-info {
+        padding: 10px;
+    }
+    .book-info h3 {
+        font-size: 1.1rem;
+    }
+    .book-info p {
+        font-size: 0.85rem;
+    }
 }

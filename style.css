@@ -1,0 +1,92 @@
+/* Сброс отступов и полей у всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Базовые стили для всей страницы */
+body {
+    font-family: Georgia, 'Times New Roman', serif; /* Шрифт с засечками лучше подходит для чтения */
+    line-height: 1.8; /* Межстрочный интервал для удобства чтения */
+    color: #333; /* Основной цвет текста */
+    background-color: #f9f9f9; /* Светлый фон страницы */
+    max-width: 800px; /* Ограничение ширины контента */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+}
+
+/* Стили шапки сайта */
+header {
+    text-align: center; /* Выравнивание по центру */
+    padding: 40px 0; /* Отступы сверху и снизу */
+    border-bottom: 2px solid #eee; /* Разделительная линия снизу */
+    margin-bottom: 40px; /* Отступ до основного содержимого */
+}
+
+/* Заголовок первого уровня в шапке */
+header h1 {
+    font-size: 2.5em; /* Крупный размер шрифта */
+    color: #2c3e50; /* Тёмно-синий цвет */
+    margin-bottom: 10px; /* Отступ до подзаголовка */
+}
+
+/* Подзаголовок с именем автора */
+.subtitle {
+    color: #7f8c8d; /* Серый цвет */
+    font-style: italic; /* Курсив */
+}
+
+/* Отступы между разделами */
+section {
+    margin-bottom: 40px;
+}
+
+/* Заголовки второго уровня */
+h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #ddd; /* Тонкая линия под заголовком */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Список сказок: убираем стандартные маркеры */
+.stories ul {
+    list-style: none;
+}
+
+/* Карточка каждой сказки */
+.stories li {
+    background: #fff; /* Белый фон карточки */
+    padding: 20px; /* Внутренние отступы */
+    margin-bottom: 20px; /* Отступ между карточками */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Лёгкая тень */
+}
+
+/* Заголовок третьего уровня внутри карточки */
+.stories h3 {
+    margin-bottom: 10px;
+}
+
+/* Ссылки на сказки */
+.stories a {
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #3498db; /* Синий цвет ссылки */
+}
+
+/* Ссылки при наведении курсора */
+.stories a:hover {
+    color: #2980b9; /* Более тёмный синий */
+    text-decoration: underline; /* Появляется подчёркивание */
+}
+
+/* Стили подвала сайта */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #95a5a6; /* Светло-серый цвет текста */
+    font-size: 0.9em; /* Чуть меньший размер шрифта */
+    border-top: 1px solid #eee; /* Разделительная линия сверху */
+    margin-top: 40px;
+}
